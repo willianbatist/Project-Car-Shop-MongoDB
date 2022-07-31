@@ -22,6 +22,14 @@ describe('Sua descrição', () => {
 			const newCar = await carsModel.create(carMock);
 			expect(newCar).to.be.deep.equal(carMockWithId);
 		});
+
+    it('_id not found', async () => {
+			try {
+				await carsModel.readOne('123ERRADO');
+			} catch (error: any) {
+				expect(error.message).to.be.eq('InvalidMongoId');
+			}
+		});
 	});
 
 });
