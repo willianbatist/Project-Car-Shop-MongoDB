@@ -22,7 +22,7 @@ describe('TESTING SERVICE CAR', () => {
 		sinon.restore()
 	})
 
-  describe('Create Frame', () => {
+  describe('Create Car Service', () => {
 		it('Success', async () => {
 			const carCreated = await carsService.create(carMock);
 
@@ -39,7 +39,7 @@ describe('TESTING SERVICE CAR', () => {
 		});
 	});
 
-	// describe('ReadOne Frame', () => {
+	// describe('ReadOne Car', () => {
 	// 	it('Success', async () => {
 	// 		const carCreated = await carsService.readOne(carMockWithId._id);
 
