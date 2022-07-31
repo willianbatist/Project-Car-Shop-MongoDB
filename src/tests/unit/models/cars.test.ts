@@ -5,7 +5,7 @@ import { Model } from 'mongoose';
 import { carMock, carMockWithId } from '../../mocks/carsMock';
 const { expect } = chai;
 
-describe('Sua descrição', () => {
+describe('TESTING MODEL CAR', () => {
   const carsModel = new CarsModel();
 
   before(async () => {
