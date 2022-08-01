@@ -30,4 +30,17 @@ export default class FrameController {
       next(error);
     }
   }
+
+  public async readOne(
+    req: Request, 
+    res: Response<ICar>,
+    next: NextFunction,
+  ) {
+    try {
+      const result = await this._service.readOne(req.params.id);
+      return res.status(200).json(result);
+    } catch (error) {
+      next(error);
+    }
+  }
 }
