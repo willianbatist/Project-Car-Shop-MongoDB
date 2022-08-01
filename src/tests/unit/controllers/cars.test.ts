@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import * as sinon from 'sinon';
-import { NextFunction, Request, Response } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import { carMock, carMockWithId } from '../../mocks/carsMock';
 import CarsController from '../../../controllers/CarsController';
 import CarsService from '../../../services/CarsService';
@@ -17,7 +17,7 @@ describe('TESTING CAR CONTROLLER', () => {
 
   before(() => {
     sinon.stub(carsService, 'create').resolves(carMock);
-    // sinon.stub(carsService, 'readOne').resolves(carMock);
+    sinon.stub(carsService, 'readOne').resolves(carMock);
 
     res.status = sinon.stub().returns(res);
     res.json = sinon.stub().returns(res);
@@ -38,16 +38,15 @@ describe('TESTING CAR CONTROLLER', () => {
     });
   });
 
-  // describe('ReadOne Car Controller', () => {
-  //   it('Success', async () => {
-  //     // como fizemos o dublê da service o valor do `req.params.id` não vai chegar na model
-  //     // logo ele só precisa ser um string e existir
-  //     req.params = { id: carMockWithId._id };
-  //     await carsController.readOne(req, res, next);
-
-  //     expect((res.status as sinon.SinonStub).calledWith(200)).to.be.true;
-  //     expect((res.json as sinon.SinonStub).calledWith(carMock)).to.be.true;
-  //   });
-  // });
+  describe('ReadOne Car Controller', () => {
+    it('Success', async () => {
+      // como fizemos o dublê da service o valor do `req.params.id` não vai chegar na model
+      // logo ele só precisa ser um string e existir
+      req.params = { id: carMockWithId._id };
+      await carsController.readOne(req, res, next);
+      expect((res.status as sinon.SinonStub).calledWith(200)).to.be.true;
+      expect((res.json as sinon.SinonStub).calledWith(carMock)).to.be.true;
+    });
+  });
 
 });
