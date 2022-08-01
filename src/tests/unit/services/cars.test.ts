@@ -16,7 +16,8 @@ describe('TESTING SERVICE CAR', () => {
 		sinon.stub(carsModel, 'create').resolves(carMockWithId);
 		sinon.stub(carsModel, 'readOne')
 			.onCall(0).resolves(carMockWithId) 
-			.onCall(1).resolves(null); 
+			.onCall(1).resolves(null);
+		sinon.stub(carsModel, 'read').resolves([carMockWithId]);
 	})
 	after(() => {
 		sinon.restore()
@@ -53,5 +54,12 @@ describe('TESTING SERVICE CAR', () => {
 				expect(error.message).to.be.deep.equal(ErrorTypes.EntityNotFound);
 			}
 		});
+	});
+
+	describe('List Cars', () => {
+		it('successfully list cars', async () => {
+      const cars = await carsService.read();
+			expect(cars).to.be.deep.equal([carMockWithId]);
+    });
 	});
 });
