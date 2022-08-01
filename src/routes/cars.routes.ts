@@ -9,6 +9,8 @@ const carsController = new CarsController(carsService);
 const route = Router();
 
 route.get('/cars', (req, res, next) => carsController.read(req, res, next));
+route
+  .get('/cars/:id', (req, res, next) => carsController.readOne(req, res, next));
 route.post('/cars', (req, res, next) => carsController.create(req, res, next));
 
 export default route;
