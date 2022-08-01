@@ -18,6 +18,7 @@ describe('TESTING CAR CONTROLLER', () => {
   before(() => {
     sinon.stub(carsService, 'create').resolves(carMock);
     sinon.stub(carsService, 'readOne').resolves(carMock);
+    sinon.stub(carsService, 'read').resolves([carMock]);
 
     res.status = sinon.stub().returns(res);
     res.json = sinon.stub().returns(res);
@@ -49,4 +50,13 @@ describe('TESTING CAR CONTROLLER', () => {
     });
   });
 
+  describe('list Car Controller', () => {
+    it('Success', async () => {
+      // como fizemos o dublê da service o valor do `req.params.id` não vai chegar na model
+      // logo ele só precisa ser um string e existir
+      await carsController.read(req, res, next);
+      expect((res.status as sinon.SinonStub).calledWith(200)).to.be.true;
+      expect((res.json as sinon.SinonStub).calledWith([carMock])).to.be.true;
+    });
+  });
 });
