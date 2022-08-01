@@ -17,6 +17,10 @@ class CarsService implements IService<ICar> {
     }
     return this._cars.create(obj);
   }
+
+  public async read(): Promise<ICar[]> {
+    return this._cars.read();
+  }
 }
 
 export default CarsService;
