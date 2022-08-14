@@ -107,49 +107,49 @@ Coloque as dependências que vamos utilizar em desenvolvimento no arquivo packag
 
 
 
-Crie a pasta src, para nossos exemplos. Crie um arquivo index.ts na pasta src;
+- Crie a pasta src, para nossos exemplos. Crie um arquivo index.ts na pasta src;
 
 Vamos transformar o exemplo da loja citado anteriormente em uma função typeScript e entender na prática como uma função cheia de responsabilidade por ser muito prejudicial ao código. 
 
-Coloque esse código no index.ts
+- Coloque esse código no index.ts
 
-function manageStore() {
- const totalProducts = () => 100;
- const openStore = () => true;
- const salesProducts = () => 'Iphone, xbox';
- const handlePayment = (payment: string) => {
-   if (payment === 'money') {
-     return 'the product price is 20';
-   }
-   if (payment === 'card') {
-     return 'the product price is 23';
-   }
-   if (payment === 'pix') {
-     return 'the product price is 20';
-   }
- };
- const customers = ['Tony', 'Bruce', 'Nick', 'Peter', 'Stephen', 'Steven']
- const listCustomers = (arr: string[]) => arr.forEach((customer) => console.log(customer));
+		function manageStore() {
+ 			const totalProducts = () => 100;
+ 			const openStore = () => true;
+ 			const salesProducts = () => 'Iphone, xbox';
+ 			const handlePayment = (payment: string) => {
+   				if (payment === 'money') {
+     				return 'the product price is 20';
+   				}
+   				if (payment === 'card') {
+     				return 'the product price is 23';
+   				}
+   				if (payment === 'pix') {
+     			return 'the product price is 20';
+   				}
+ 		};
+ 		const customers = ['Tony', 'Bruce', 'Nick', 'Peter', 'Stephen', 'Steven']
+ 		const listCustomers = (arr: string[]) => arr.forEach((customer) => console.log(customer));
  
- console.log(handlePayment('pix'));
- console.log(salesProducts());
- console.log(openStore());
- console.log(totalProducts());
- return listCustomers(customers);
-}
+ 		console.log(handlePayment('pix'));
+ 		console.log(salesProducts());
+ 		console.log(openStore());
+ 		console.log(totalProducts());
+ 		return listCustomers(customers);
+		}
  
-const totalProducts = () => 100;
+		const totalProducts = () => 100;
  
-const store = manageStore();
+		const store = manageStore();
  
-console.log(store);
+		console.log(store);
  
 
 Rode o código utilizando o comando npx ts-node src. Rode o linter utilizando o comando npm run lint.
 
 O TypeScript nem vai conseguir executar a função e vai apresentar diversos erros. Em seguida, no eslint terá ainda mais erros para corrigir. Perceba que a função manegeStore, possui diversas responsabilidades para executar e diversos retornos diferentes, ficando confuso fazer a tipagem e na hora de testar ficará bem imprevisível.
 
-Então vamos aplicar o Single-responsibility principle, dividir a função em pequenas outras funções com responsabilidades únicas. 
+Então vamos aplicar o **S***ingle-responsibility principle*, dividir a função em pequenas outras funções com responsabilidades únicas. 
 
 Copie o código a seguir cole no index.ts
 
