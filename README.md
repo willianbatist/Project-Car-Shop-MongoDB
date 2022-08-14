@@ -422,7 +422,7 @@ Cole essa função no index.ts
  
 	console.log(manageHeroes());
 
-	OBS: o código acima será usado como base para os exercícios que veremos a seguir. .
+OBS: o código acima será usado como base para os exercícios que veremos a seguir. .
 
 
 # Exercícios
