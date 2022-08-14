@@ -8,9 +8,9 @@ Você quer escrever um código mais limpo? Fácil de identificar as responsabili
 
 ## Você será capaz de:
 
-    - Escrever classes ou funções de responsabilidade única;
-    - Escrever classes ou funções que não dependem de métodos que não utilizam;
-    - Escrever classes ou funções mais legíveis.
+- Escrever classes ou funções de responsabilidade única;
+- Escrever classes ou funções que não dependem de métodos que não utilizam;
+- Escrever classes ou funções mais legíveis.
 
 
 ## Porque isso é importante?
@@ -26,15 +26,15 @@ Qualidade de código é um fator importante na hora de criar sua aplicação, po
 
 No desenvolvimento de software, SOLID é um acrônimo para cinco princípios de projeto, destinados a tornar os projetos orientados a objetos mais legíveis, concisos e de fácil manutenção. Os princípios são um subconjunto de muitos princípios sendo eles:
 
-O **S***ingle-responsibility principle*: esse princípio coloca que uma classe ou função só deve possuir uma única responsabilidade.
+- O **S***ingle-responsibility principle*: esse princípio coloca que uma classe ou função só deve possuir uma única responsabilidade.
 
-O **O***pen-closed principle*: entidades de software devem ser abertas para extensão, mas fechadas para modificação.
+- O **O***pen-closed principle*: entidades de software devem ser abertas para extensão, mas fechadas para modificação.
 
-O **L***iskov substitution principle*: esse princípio simplesmente exige que cada classe derivada seja substituível por sua classe pai.
+ - O **L***iskov substitution principle*: esse princípio simplesmente exige que cada classe derivada seja substituível por sua classe pai.
 
-O **I***nterface segregation principle*: os clientes não devem ser forçados a implementar interfaces que não usam.
+- O **I***nterface segregation principle*: os clientes não devem ser forçados a implementar interfaces que não usam.
 
-O **D***ependency inversion principle*: simplificando, o princípio da inversão de dependência significa que os desenvolvedores devem “depender de abstrações, não de concreções”.
+- O **D***ependency inversion principle*: simplificando, o princípio da inversão de dependência significa que os desenvolvedores devem “depender de abstrações, não de concreções”.
 
 
 
